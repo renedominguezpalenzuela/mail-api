@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sendmails",
+  "info": {
+    "singularName": "sendmail",
+    "pluralName": "sendmails",
+    "displayName": "sendmail"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    }
+  }
+}
