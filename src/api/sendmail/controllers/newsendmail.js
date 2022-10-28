@@ -5,8 +5,9 @@ module.exports = {
     const vto = postParams.to;
     const vfrom = postParams.from;
     const vsubject = postParams.subject;
-    const vtext = postParams.body;
+    // const vtext = postParams.body;
     const vhtml = postParams.html;
+    // `<h1>Welcome!</h1><p>This is a test HTML email.</p>`,
 
     
     try {
@@ -15,8 +16,8 @@ module.exports = {
         from: vfrom, 
         replyTo: vfrom,
         subject: vsubject,
-        text: vtext,
-        html: `<h1>Welcome!</h1><p>This is a test HTML email.</p>`,
+        // text: vtext,
+        html: vhtml
       };
 
       await strapi.plugins["email"].services.email.send(mensaje);
