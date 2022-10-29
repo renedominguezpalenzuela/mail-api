@@ -1,31 +1,56 @@
 module.exports = {
   customAction: async (ctx) => {
+	  
+	  console.log(ctx.request);
 
-    const postParams = JSON.parse(ctx.request.body);
+  // console.log(ctx.request.body);
+    //const postParams = JSON.parse(ctx.request.body);
+	
+	const postParams = ctx.request.body;
+	
+	
+
     const vto = postParams.to;
+	console.log(vto);
+	
     const vfrom = postParams.from;
     const vsubject = postParams.subject;
-    // const vtext = postParams.body;
+    
     const vhtml = postParams.html;
-    // `<h1>Welcome!</h1><p>This is a test HTML email.</p>`,
+    
+	
+	
 
     
     try {
       const mensaje = {
-        to: vto,
+        to:vto,
         from: vfrom, 
         replyTo: vfrom,
         subject: vsubject,
         // text: vtext,
         html: vhtml
       };
+	  
+	  console.log(mensaje);
+	/*  
+	 const mensaje =   {
+         to:"renedp1975@gmail.com", 
+         from: "renedsoft@gmail.com",
+         subject:"aaaa",
+         body:"Eses es el bofu",
+         html: "<h1>Esto es un mensaje 3 html</h1>",
+         
+        
+     }*/
+
 
       await strapi.plugins["email"].services.email.send(mensaje);
       strapi.log.debug(`Email sent to ${vto}`);
       ctx.send({ message: "Email sent" });
     } catch (err) {
       strapi.log.error(`Error sending email to ${to}`, err);
-      ctx.send({ error: "Error sending email" });
+      ctx.send({ error: "Error sending email "+err });
     }
         
   },
