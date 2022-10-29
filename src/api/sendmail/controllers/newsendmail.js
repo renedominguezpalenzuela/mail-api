@@ -26,7 +26,6 @@ module.exports = {
       const mensaje = {
         to:vto,
         from: vfrom, 
-        replyTo: vfrom,
         subject: vsubject,
         // text: vtext,
         html: vhtml
