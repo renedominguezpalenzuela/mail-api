@@ -1,7 +1,7 @@
 module.exports = {
   customAction: async (ctx) => {
 	  
-	  console.log(ctx.request);
+	  //console.log(ctx.request);
 
   // console.log(ctx.request.body);
     //const postParams = JSON.parse(ctx.request.body);
@@ -11,7 +11,7 @@ module.exports = {
 	
 
     const vto = postParams.to;
-	console.log(vto);
+	//console.log(vto);
 	
     const vfrom = postParams.from;
     const vsubject = postParams.subject;
@@ -27,11 +27,10 @@ module.exports = {
         to:vto,
         from: vfrom, 
         subject: vsubject,
-        // text: vtext,
         html: vhtml
       };
 	  
-	  console.log(mensaje);
+	 // console.log(mensaje);
 	/*  
 	 const mensaje =   {
          to:"renedp1975@gmail.com", 
